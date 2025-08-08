@@ -2,7 +2,7 @@ services:
   - type: web
     name: intellidocs-api
     runtime: python
-    pythonVersion: 3.11
+    pythonVersion: 3.11  
     buildCommand: |
       pip install --upgrade pip setuptools wheel build
       pip install -r requirements.txt
