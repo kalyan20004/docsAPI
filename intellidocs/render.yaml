@@ -2,8 +2,10 @@ services:
   - type: web
     name: intellidocs-api
     runtime: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: python app.py
+    buildCommand: |
+      pip install --upgrade pip setuptools wheel
+      pip install -r requirements.txt
+    startCommand: gunicorn app:app
     envVars:
       - key: GEMINI_API_KEY
         value: your-api-key-here
